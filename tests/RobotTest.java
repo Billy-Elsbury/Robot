@@ -6,12 +6,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class RobotTest {
+class Robot4Test {
     Robot buddy ;
 
     @BeforeAll
     public void setup() {
-        buddy = new Robot("buddy");
+        buddy = new Robot("buddy", 20);
         System.out.println("in setup");
     }
 
@@ -65,7 +65,7 @@ class RobotTest {
     public void testName_Fail() {
 
         assertThrows(IllegalArgumentException.class, () -> {
-            Robot chuck = new Robot("");
+            Robot4Test chuck = new Robot4Test();
 
 
         });

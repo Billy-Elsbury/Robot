@@ -4,9 +4,19 @@ public class Robot {
 
     private String name;
     private boolean working = false;
+    private int age;
 
-    public Robot(String name) {
+    public Robot(String name, int age) {
         setName(name);
+        setAge(age);
+    }
+
+    public double checkCost() {
+        if (age <= 5) {
+            return 10000.00;
+        } else if (age <= 10) {
+            return 7500.00;
+        } else return 5000.00;
     }
 
     private void setName (String name){
@@ -14,6 +24,25 @@ public class Robot {
             throw new IllegalArgumentException();
         }
         this.name = name;
+    }
+
+
+    private void setAge(int age) {
+        if (age <= 30) {
+            this.age = age;
+        } else {
+            throw new IllegalArgumentException();
+
+        }
+
+    }
+
+    public String checkage() {
+        if (age <= 20) {
+            return "Age ok";
+        } else {
+            return "Too old";
+        }
     }
 
 
